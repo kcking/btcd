@@ -631,6 +631,9 @@ func (mp *txMemPool) RemoveDoubleSpends(tx *btcutil.Tx) {
 	for _, txIn := range tx.MsgTx().TxIn {
 		if txRedeemer, ok := mp.outpoints[txIn.PreviousOutpoint]; ok {
 			if !txRedeemer.Sha().IsEqual(tx.Sha()) {
+                if mp.server.rpcServer != nil {
+                    mp.server.rpcServer.ntfnMgr.NotifyTxDoubleSpent(txRedeemer.Sha(), tx.Sha(), true)
+                }
 				mp.removeTransaction(txRedeemer)
 			}
 		}
@@ -666,6 +669,9 @@ func (mp *txMemPool) addTransaction(tx *btcutil.Tx, height, fee int64) {
 func (mp *txMemPool) checkPoolDoubleSpend(tx *btcutil.Tx) error {
 	for _, txIn := range tx.MsgTx().TxIn {
 		if txR, exists := mp.outpoints[txIn.PreviousOutpoint]; exists {
+            if mp.server.rpcServer != nil {
+                mp.server.rpcServer.ntfnMgr.NotifyTxDoubleSpent(txR.Sha(), tx.Sha(), false)
+            }
 			str := fmt.Sprintf("transaction %v in the pool "+
 				"already spends the same coins", txR.Sha())
 			return txRuleError(btcwire.RejectDuplicate, str)

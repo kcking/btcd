@@ -206,6 +206,19 @@ func (m *wsNotificationManager) NotifyBlockDisconnected(block *btcutil.Block) {
 	}
 }
 
+func (m *wsNotificationManager) NotifyTxDoubleSpent(mempoolTxHash *btcwire.ShaHash, incomingTxHash *btcwire.ShaHash, isInBlock bool) {
+    fmt.Printf("Double spend: %s, %s, %b\n", mempoolTxHash.String(), incomingTxHash.String(), isInBlock)
+    n := &notificationTxDoubleSpent{
+        mempoolTxHash: mempoolTxHash,
+        incomingTxHash: incomingTxHash,
+        isInBlock: isInBlock,
+    }
+	select {
+	case m.queueNotification <- n:
+	case <-m.quit:
+	}
+}
+
 // NotifyMempoolTx passes a transaction accepted by mempool to the
 // notification manager for transaction notification processing.  If
 // isNew is true, the tx is is a new transaction, rather than one
@@ -232,6 +245,11 @@ type notificationBlockDisconnected btcutil.Block
 type notificationTxAcceptedByMempool struct {
 	isNew bool
 	tx    *btcutil.Tx
+}
+type notificationTxDoubleSpent struct {
+    mempoolTxHash *btcwire.ShaHash
+    incomingTxHash *btcwire.ShaHash
+    isInBlock bool
 }
 
 // Notification control requests
@@ -312,6 +330,9 @@ out:
 					m.notifyForNewTx(txNotifications, n.tx)
 				}
 				m.notifyForTx(watchedOutPoints, watchedAddrs, n.tx, nil)
+
+            case *notificationTxDoubleSpent:
+                m.notifyTxDoubleSpent(clients, n.mempoolTxHash, n.incomingTxHash, n.isInBlock)
 
 			case *notificationRegisterBlocks:
 				wsc := (*wsClient)(n)
@@ -416,6 +437,25 @@ func (*wsNotificationManager) notifyBlockConnected(clients map[chan struct{}]*ws
 	if err != nil {
 		rpcsLog.Error("Failed to marshal block connected notification: "+
 			"%v", err)
+		return
+	}
+	for _, wsc := range clients {
+		wsc.QueueNotification(marshalledJSON)
+	}
+}
+
+func (*wsNotificationManager) notifyTxDoubleSpent(clients map[chan bool]*wsClient, mempoolTxHash *btcwire.ShaHash, incomingTxHash *btcwire.ShaHash, isInBlock bool) {
+	if len(clients) == 0 {
+		return
+	}
+    mempoolTxHashStr := mempoolTxHash.String()
+    incomingTxHashStr := incomingTxHash.String()
+	ntfn := btcws.NewTxDoubleSpentNtfn(&mempoolTxHashStr, &incomingTxHashStr,
+		isInBlock)
+	marshalledJSON, err := json.Marshal(ntfn)
+	if err != nil {
+		rpcsLog.Error("Failed to marshal block disconnected "+
+			"notification: %v", err)
 		return
 	}
 	for _, wsc := range clients {
