@@ -207,12 +207,12 @@ func (m *wsNotificationManager) NotifyBlockDisconnected(block *btcutil.Block) {
 }
 
 func (m *wsNotificationManager) NotifyTxDoubleSpent(mempoolTxHash *btcwire.ShaHash, incomingTxHash *btcwire.ShaHash, isInBlock bool) {
-    fmt.Printf("Double spend: %s, %s, %b\n", mempoolTxHash.String(), incomingTxHash.String(), isInBlock)
-    n := &notificationTxDoubleSpent{
-        mempoolTxHash: mempoolTxHash,
-        incomingTxHash: incomingTxHash,
-        isInBlock: isInBlock,
-    }
+	fmt.Printf("Double spend: %s, %s, %b\n", mempoolTxHash.String(), incomingTxHash.String(), isInBlock)
+	n := &notificationTxDoubleSpent{
+		mempoolTxHash:  mempoolTxHash,
+		incomingTxHash: incomingTxHash,
+		isInBlock:      isInBlock,
+	}
 	select {
 	case m.queueNotification <- n:
 	case <-m.quit:
@@ -247,9 +247,9 @@ type notificationTxAcceptedByMempool struct {
 	tx    *btcutil.Tx
 }
 type notificationTxDoubleSpent struct {
-    mempoolTxHash *btcwire.ShaHash
-    incomingTxHash *btcwire.ShaHash
-    isInBlock bool
+	mempoolTxHash  *btcwire.ShaHash
+	incomingTxHash *btcwire.ShaHash
+	isInBlock      bool
 }
 
 // Notification control requests
@@ -331,8 +331,8 @@ out:
 				}
 				m.notifyForTx(watchedOutPoints, watchedAddrs, n.tx, nil)
 
-            case *notificationTxDoubleSpent:
-                m.notifyTxDoubleSpent(clients, n.mempoolTxHash, n.incomingTxHash, n.isInBlock)
+			case *notificationTxDoubleSpent:
+				m.notifyTxDoubleSpent(clients, n.mempoolTxHash, n.incomingTxHash, n.isInBlock)
 
 			case *notificationRegisterBlocks:
 				wsc := (*wsClient)(n)
@@ -444,12 +444,12 @@ func (*wsNotificationManager) notifyBlockConnected(clients map[chan struct{}]*ws
 	}
 }
 
-func (*wsNotificationManager) notifyTxDoubleSpent(clients map[chan bool]*wsClient, mempoolTxHash *btcwire.ShaHash, incomingTxHash *btcwire.ShaHash, isInBlock bool) {
+func (*wsNotificationManager) notifyTxDoubleSpent(clients map[chan struct{}]*wsClient, mempoolTxHash *btcwire.ShaHash, incomingTxHash *btcwire.ShaHash, isInBlock bool) {
 	if len(clients) == 0 {
 		return
 	}
-    mempoolTxHashStr := mempoolTxHash.String()
-    incomingTxHashStr := incomingTxHash.String()
+	mempoolTxHashStr := mempoolTxHash.String()
+	incomingTxHashStr := incomingTxHash.String()
 	ntfn := btcws.NewTxDoubleSpentNtfn(&mempoolTxHashStr, &incomingTxHashStr,
 		isInBlock)
 	marshalledJSON, err := json.Marshal(ntfn)
