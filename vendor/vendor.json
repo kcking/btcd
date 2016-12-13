@@ -1,0 +1,199 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "aSxEspnSeXq3D0QAijiQf8qKPRY=",
+			"path": "code.google.com/p/go.crypto/ripemd160",
+			"revision": "f3cebac2bd11",
+			"revisionTime": "2014-08-13T17:56:59Z"
+		},
+		{
+			"checksumSHA1": "G4DkkcBy3e0Fqbo/baLLcrDK40s=",
+			"path": "code.google.com/p/snappy-go/snappy",
+			"revision": "12e4b4183793",
+			"revisionTime": "2013-02-20T11:16:03Z"
+		},
+		{
+			"checksumSHA1": "AzZjUIsfAgLCq9UpitZ/MAWsyBc=",
+			"path": "github.com/conformal/btcchain",
+			"revision": "ff4d01765f6e853ad826d36a87424312797bc331",
+			"revisionTime": "2014-07-11T14:36:53Z"
+		},
+		{
+			"checksumSHA1": "hmQWhphxVIV24x9yQ6r6YdbTtNw=",
+			"path": "github.com/conformal/btcdb",
+			"revision": "f373ba3583122f07611fec4037caf9a2dc913876",
+			"revisionTime": "2014-07-17T14:48:03Z"
+		},
+		{
+			"checksumSHA1": "m//UnKPyCeMAxJKFF52lU4dXmNY=",
+			"path": "github.com/conformal/btcdb/ldb",
+			"revision": "f373ba3583122f07611fec4037caf9a2dc913876",
+			"revisionTime": "2014-07-17T14:48:03Z"
+		},
+		{
+			"checksumSHA1": "rn/9E5DsdyuGkt2MxmA3fDr/0LA=",
+			"path": "github.com/conformal/btcdb/memdb",
+			"revision": "f373ba3583122f07611fec4037caf9a2dc913876",
+			"revisionTime": "2014-07-17T14:48:03Z"
+		},
+		{
+			"checksumSHA1": "pvSSspJbM+DqPpFWubheMTFRM2g=",
+			"path": "github.com/conformal/btcec",
+			"revision": "4ca0daacc139d145eab60124a16192265da27acb",
+			"revisionTime": "2014-08-10T21:46:46Z"
+		},
+		{
+			"checksumSHA1": "h+3Z2Tpef5XXab0mpme78Tdcghs=",
+			"path": "github.com/conformal/btcjson",
+			"revision": "766d571317a53de92d05504a6fab371d2c5e8864",
+			"revisionTime": "2014-07-24T14:06:25Z"
+		},
+		{
+			"checksumSHA1": "b6oQJMgcuW6Gw+Wn8iFL6+YgIik=",
+			"path": "github.com/conformal/btclog",
+			"revision": "8ab6c88bcd0610eb7c647bab4d8e4b59e1dfcfdd",
+			"revisionTime": "2014-07-03T00:41:51Z"
+		},
+		{
+			"checksumSHA1": "70jcP7rPVLrxmw+OMYVmOoUbTEg=",
+			"path": "github.com/conformal/btcnet",
+			"revision": "0994bcf4b2ef5f56a2493c15281c156c26dabf6c",
+			"revisionTime": "2014-07-18T23:54:09Z"
+		},
+		{
+			"checksumSHA1": "voeFjFUt9QMJza7Mh2XJjXVYduI=",
+			"path": "github.com/conformal/btcscript",
+			"revision": "95cd1b97fa823f2e8d5f481cdaab149deb356ff1",
+			"revisionTime": "2014-08-13T05:32:16Z"
+		},
+		{
+			"checksumSHA1": "4A4Qkx+tj0/3nTv2UBEEl1+F+p0=",
+			"path": "github.com/conformal/btcutil",
+			"revision": "f6d6cd5d271f60ba183e0c0ebc36ab1841ea9e21",
+			"revisionTime": "2014-08-18T23:18:16Z"
+		},
+		{
+			"checksumSHA1": "SMNmrf0zT+1QPq+kbJuYvo8pwsg=",
+			"path": "github.com/conformal/btcutil/bloom",
+			"revision": "f6d6cd5d271f60ba183e0c0ebc36ab1841ea9e21",
+			"revisionTime": "2014-08-18T23:18:16Z"
+		},
+		{
+			"checksumSHA1": "GihHIw1J9mhddHtRAuP1J4JNHk0=",
+			"path": "github.com/conformal/btcwire",
+			"revision": "4deb922c9d23d6167ec0d51b00e99a9fd020d09a",
+			"revisionTime": "2014-07-14T15:38:29Z"
+		},
+		{
+			"checksumSHA1": "hAbxXmqTDIHjAw4fnBbaioEWifA=",
+			"path": "github.com/conformal/btcws",
+			"revision": "42e617312b82aa53363b4a194e60c8dc0cac6f9d",
+			"revisionTime": "2014-07-13T23:26:23Z"
+		},
+		{
+			"checksumSHA1": "FsTU5+n4JlSxs7qZJmervQq7EhI=",
+			"path": "github.com/conformal/fastsha256",
+			"revision": "ce4c212c9d0d73ea7074795f8694f49b82152b18",
+			"revisionTime": "2014-03-24T15:02:34Z"
+		},
+		{
+			"checksumSHA1": "N4xlcIHVuHPKSgGKe9wwECesmCI=",
+			"path": "github.com/conformal/go-flags",
+			"revision": "a53ab6481be8dd78e060df308a9f577859dfeab5",
+			"revisionTime": "2013-11-24T17:05:01Z"
+		},
+		{
+			"checksumSHA1": "J9KMcOHcmFImWhqaFytpwsvgcD8=",
+			"path": "github.com/conformal/go-socks",
+			"revision": "92ce162c38f029f7fa66c4336b8b5168f2c75d78",
+			"revisionTime": "2013-08-08T00:17:57Z"
+		},
+		{
+			"checksumSHA1": "WrtfUZrGbm5cl7j5IyUXhgg4G5Y=",
+			"path": "github.com/conformal/goleveldb/leveldb",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "gGDy4hKK86pgRVM+llAhIRELxwg=",
+			"path": "github.com/conformal/goleveldb/leveldb/cache",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "slLIzn3P5k77wO8ieKqIsGn/fhM=",
+			"path": "github.com/conformal/goleveldb/leveldb/comparer",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "CymYYw6XYXE27c4AwujLhGp7e9E=",
+			"path": "github.com/conformal/goleveldb/leveldb/filter",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "ts57XLvXqp4AHMPucf/sneP4hn8=",
+			"path": "github.com/conformal/goleveldb/leveldb/iterator",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "YrAJ1l5r7JzLSXgHwYKVMmLNa8Y=",
+			"path": "github.com/conformal/goleveldb/leveldb/journal",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "iv8hREmwvKNclPBLXbsJXYmfKh8=",
+			"path": "github.com/conformal/goleveldb/leveldb/memdb",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "syLCZ9ZdV3YCQh5cPqlbmrN9KvY=",
+			"path": "github.com/conformal/goleveldb/leveldb/opt",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "9T9MsGFj3S1ao+d58hKurUpugGs=",
+			"path": "github.com/conformal/goleveldb/leveldb/storage",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "GPDYzGxqyf270jaFoGeYiZIeqz8=",
+			"path": "github.com/conformal/goleveldb/leveldb/table",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "yEnd47fxiidU46YNVe+yYBZGrJY=",
+			"path": "github.com/conformal/goleveldb/leveldb/util",
+			"revision": "ca108ee68824577f394aa81c72ac2f473ce9d04d",
+			"revisionTime": "2014-08-12T09:15:56Z"
+		},
+		{
+			"checksumSHA1": "ufemCfNyemm/xHiDTI+8fXf4MiE=",
+			"path": "github.com/conformal/seelog",
+			"revision": "6b91ad56123bb473755caa213db2bde5422177bf",
+			"revisionTime": "2013-08-01T20:12:33Z"
+		},
+		{
+			"checksumSHA1": "fNUN8tgAUo9yiovmbxKPrNcWJUo=",
+			"path": "github.com/conformal/websocket",
+			"revision": "08812523f279944afd46e7fb820fa55e31f207f2",
+			"revisionTime": "2014-06-07T05:57:21Z"
+		},
+		{
+			"checksumSHA1": "MG0EbB7ndHuQq5Wn+8Rc8CGoV/A=",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "3fdaf5cea8d23107b993d363e98992fa529dd713",
+			"revisionTime": "2014-05-06T03:09:56Z"
+		}
+	],
+	"rootPath": "github.com/conformal/btcd"
+}
